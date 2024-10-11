@@ -88,12 +88,24 @@ jobs:
         echo "using xsltproc ;" >> $HOME/user-config.jam
         test -f $HOME/user-config.jam && cat $HOME/user-config.jam
 
+    - name: Build documentation method 2
+      run: |
+        set -xe
+        pwd
+        cd $BOOST_ROOT
+        cd libs/geometry/doc
+        pwd 
+        ls -al  || true
+        ls -alR build || true
+        $BOOST_ROOT/b2
+
+    - name: Build documentation method 1
+      run: |
+        cd $BOOST_ROOT
+        ./b2 libs/geometry/doc/
+
     - name: Build examples
       run: |
         cd $BOOST_ROOT
         $BOOST_ROOT/b2 libs/geometry/doc/src/examples
 
-    - name: Build documentation
-      run: |
-        cd $BOOST_ROOT
-        ./b2 libs/geometry/doc/
