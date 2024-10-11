@@ -97,7 +97,12 @@ jobs:
         pwd 
         ls -al  || true
         ls -alR build || true
+        which quickbook || true
         $BOOST_ROOT/b2
+        echo "post"
+        ls -al  || true
+        ls -alR build || true
+        which quickbook || true
 
     - name: Build documentation method 1
       run: |
