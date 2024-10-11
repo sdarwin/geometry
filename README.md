@@ -24,3 +24,4 @@ Boost.Geometry, part of collection of the [Boost C++ Libraries](http://github.co
 * **index** - examples and tests for the Spatial Index
 * **meta** - library metadata
 * **test** - Boost.Geometry unit tests
+
